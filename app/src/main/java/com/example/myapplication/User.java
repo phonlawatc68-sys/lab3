@@ -1,24 +1,18 @@
 package com.example.myapplication;
 
 public class User {
-    //Attribute
-    String Name;
-    String gender;
-    String email;
+    private String Name;
+    private String gender;
+    private String gmail;
 
-    //Method
-    void getSummary(){
-        System.out.println(this.Name);
-        System.out.println(this.gender+" "+this.email);
-
+    // --- เพิ่มโค้ดส่วนนี้ ---
+    public User(String Name, String gender, String gmail) {
+        this.Name = Name;
+        this.gender = gender;
+        this.gmail = gmail;
     }
+    // -----------------------
 
-
-
-
-    }
-
-
-
-
-
+    public String getName() { return Name; }
+    public String getgmail() { return gmail; }
+}

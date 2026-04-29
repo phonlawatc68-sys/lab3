@@ -1,40 +1,28 @@
 package com.example.myapplication;
 
 import android.os.Bundle;
-
-import androidx.activity.EdgeToEdge;
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.core.graphics.Insets;
-import androidx.core.view.ViewCompat;
-import androidx.core.view.WindowInsetsCompat;
+import java.util.Arrays;
 
 public class MainActivity extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        EdgeToEdge.enable(this);
         setContentView(R.layout.activity_main);
-        ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main), (v, insets) -> {
-            Insets systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars());
-            v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom);
-            return insets;
-        });
-
-        //Note
-        Note note1 = new Note();
-        note1.title = "lad1";
-        note1.content = "DO and sent lad1 defore due date";
-        note1.createdDete = "22/04/2023";
-
-        User user1 = new User();
-        user1.Name = "Gino";
-        user1.gender = "Male";
-        user1.email = "ginoinwza@gmail.com";
 
 
 
+
+        User user1 = new User("Your Name", "Male", "test@gmail.com");
+
+
+        TextNote note1 = new TextNote("lab1", "22/04/2023", "22/04/2023", "รายละเอียดโน้ต...");
+        note1.getSummary(); // แสดงผลลัพธ์ผ่าน Polymorphism
+
+
+        CheckListNote note2 = new CheckListNote("Shopping List", "29/04/2026", "29/04/2026", Arrays.asList("Milk", "Egg"));
+        note2.getSummary();
 
     }
 }
-

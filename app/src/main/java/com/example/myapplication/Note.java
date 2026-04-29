@@ -1,16 +1,23 @@
 package com.example.myapplication;
 
-public class Note {
-    //Attribute
-    String title;
-    String content;
-    String createdDete;
+public abstract class Note {
 
-    //Method
-    void getSummary(){
-        System.out.println(this.title);
-        System.out.println(this.content+" "+this.createdDete);
+    private String title;
+    private String contentDate;
+    private String createdDate;
+
+
+    public Note(String title, String contentDate, String createdDate) {
+        this.title = title;
+        this.contentDate = contentDate;
+        this.createdDate = createdDate;
     }
 
 
+    public String getTitle() {
+        return title;
+    }
+
+
+    public abstract void getSummary();
 }
